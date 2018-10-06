@@ -1,10 +1,8 @@
-import { Reader, ReadResult, Seeker } from "deno";
+import { ReadSeeker, ReadResult } from "deno";
 import { copy, viewBuffer } from "./buffer";
 
-interface ReadSeeker extends Reader, Seeker { }
-
 export class Cursor implements ReadSeeker {
-	private readonly buffer: ArrayBuffer;
+	private readonly buffer: ArrayBufferLike;
 	private byteLength: number;
 	private byteOffset: number;
 

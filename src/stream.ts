@@ -1,5 +1,5 @@
 import { Reader } from "deno";
-import { viewBuffer } from "./misc";
+import { viewBuffer } from "./buffer";
 
 const streamOptions = { stream: true };
 

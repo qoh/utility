@@ -1,7 +1,7 @@
 import { open, stat } from "deno";
 import { decodeStream } from "./stream";
 import { collectAsync } from "./iterable";
-import { viewBuffer } from "./misc";
+import { viewBuffer } from "./buffer";
 import { copy } from "./buffer";
 
 export async function* decodeFile(

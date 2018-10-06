@@ -1,6 +1,6 @@
 // TODO: Find a native function that does this
 export function copy(
-	dst: ArrayBuffer | SharedArrayBuffer,
+	dst: ArrayBufferLike,
 	dstOffset: number,
 	src: ArrayBufferView,
 ) {
@@ -13,11 +13,11 @@ export function copy(
 }
 
 export function viewBuffer(
-	buffer: BufferSource,
+	buffer: ArrayBuffer | SharedArrayBuffer | ArrayBufferView,
 	byteLength = buffer.byteLength,
 	byteOffset = 0,
 ): ArrayBufferView {
-	if (buffer instanceof ArrayBuffer) {
+	if (buffer instanceof ArrayBuffer || buffer instanceof SharedArrayBuffer) {
 		return { buffer, byteLength, byteOffset };
 	} else {
 		return {
