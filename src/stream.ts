@@ -3,9 +3,14 @@ import { viewBuffer } from "./misc";
 
 const streamOptions = { stream: true };
 
-export async function* decodeStream(input: Reader, encoding: string, fatal?: boolean): AsyncIterableIterator<string> {
+export async function* decodeStream(
+	input: Reader,
+	encoding: string,
+	fatal?: boolean,
+	chunkSize = 1024,
+): AsyncIterableIterator<string> {
 	const decoder = new TextDecoder(encoding, { fatal });
-	const readBuffer = new ArrayBuffer(1024);
+	const readBuffer = new ArrayBuffer(chunkSize);
 	const readBufferView = viewBuffer(readBuffer);
 
 	do {
