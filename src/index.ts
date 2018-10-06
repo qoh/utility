@@ -6,3 +6,4 @@ export { copy, viewBuffer } from "./buffer";
 // deno-specific
 export { decodeStream } from "./stream";
 export { decodeFile, readFileToBufferFull, readFileToString } from "./fs";
+export { Cursor } from "./Cursor";
