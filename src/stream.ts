@@ -5,8 +5,8 @@ const streamOptions = { stream: true };
 
 export async function* decodeStream(
 	input: Reader,
-	encoding: string,
-	fatal?: boolean,
+	encoding = "utf-8",
+	fatal = false,
 	chunkSize = 1024,
 ): AsyncIterableIterator<string> {
 	const decoder = new TextDecoder(encoding, { fatal });
