@@ -4,6 +4,6 @@ export { collectAsync, joinAsync, joinSync } from "./iterable";
 export { copy, viewBuffer } from "./buffer";
 
 // deno-specific
-export { decodeStream } from "./stream";
+export { decodeStream, copyMax } from "./stream";
 export { decodeFile, readFileToBufferFull, readFileToString } from "./fs";
 export { Cursor } from "./Cursor";
