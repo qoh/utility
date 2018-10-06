@@ -1,4 +1,3 @@
-
 const textEncoder = new TextEncoder();
 const textDecoderUTF8Fatal = new TextDecoder("utf-8", { fatal: true });
 const textDecoderUTF8Safe = new TextDecoder();
